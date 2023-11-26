@@ -1,70 +1,78 @@
-# Getting Started with Create React App
+## Welcome again to another React project! 👋
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Cinetag
 
-## Available Scripts
+I'm not DJ Khaled but, ANOTHER ONE!
 
-In the project directory, you can run:
+### Home
+- Home page where you can select videos and add you favorite ones.
 
-### `npm start`
+![](./public/ss/home.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Favorites
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Here you can see your favorited videos.
 
-### `npm test`
+![](./public/ss/favoritos.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Player
 
-### `npm run build`
+- Here you can watch the selected video.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![](./public/ss/player.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 404 Page
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- If you type an incorret address.
 
-### `npm run eject`
+![](./public/ss/404.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Some code that I'm proud of
+```js
+function Inicio(){
+    const [videos, setVideos] = useState([]);
+    useEffect(()=>{
+        fetch("https://my-json-server.typicode.com/lucasbailo/cinetag-api-bailo/videos")
+            .then(resposta => resposta.json())
+            .then(dados => {
+                setVideos(dados)
+            })
+    }, [])
+    return(
+        <>
+            <Banner imagem="home" />
+            <Titulo>
+                <h1>Um lugar para guardar seus vídeos e filmes!</h1>
+            </Titulo>
+            <section className={styles.container}>
+                {videos.map((video) => {
+                    return <Card {...video} key={video.id} />
+                })}
+            </section>
+        </>
+    )
+}
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Built with
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- REACT;
+- CSS custom properties;
+- JavaScript;
+- Sweat and tears 😫.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Test the project yourself: [Teste the project here!!!](#)
 
-## Learn More
+### You can:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Choose between Routes;
+- Click and see diferent videos;
+- Add your favorite ones;
+- Receive a 404 error message and come back to the previous page.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Author
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Website - [My GitHub](https://github.com/lucasbailo)
+- Frontend Mentor - [@lucasbailo](https://www.frontendmentor.io/profile/lucasbailo)
+- Instagram - [@lucassbailo](https://www.instagram.com/lucassbailo/)
+- LinkedIn - [Lucas Bailo](https://www.linkedin.com/in/lcsbailo)
