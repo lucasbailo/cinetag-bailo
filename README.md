@@ -61,7 +61,7 @@ function Inicio(){
 - JavaScript;
 - Sweat and tears 😫.
 
-## Test the project yourself: [Teste the project here!!!](#)
+## Test the project yourself: [Teste the project here!!!](https://cinetag-bailo.vercel.app/)
 
 ### You can:
 
